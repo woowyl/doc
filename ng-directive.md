@@ -66,6 +66,10 @@ AngularJS directive
  - 指令的本质是替换的过程
  
  ---
+  ### 使用controller也能获得同样的结果，对吧？
+  是的，确实如此---但是这样做会带来一个重大的问题。一旦我需要在其它地方添加相同的方法，我必须拷贝这份代码（html DOM + controller）（非 常un-DRY!)或者进行重构（重构本身并不是什么不好的的事情）。通过直接构建一个指令的方式，我们 以后就没有必要担心这种事情了---同时下次再需要实现相同功能的时候完全不需要花任何时间。通过构建指令的方式来进行DOM交互和修改，随着业务需求的 不断介入，我们就可以立即腾出手来处理复杂性不断增加的应用了。这是相当不错的一件事情，因为它保证了我们可以更少地和自己的实现打架，并且可以一直编写 DRYer code。
+
+ ---
 # 三、How
 - 1 . API 概览
 - 2 . 有哪些坑
@@ -105,7 +109,7 @@ AngularJS directive
 |***C***|类|`<div class='directiveName'></div>`
 |***M***|注释|`<--directive:directiveName expression-->`
 
-[示例](https://jsfiddle.net/woowyl/t6xa6c82/3/)
+[resttict示例](https://jsfiddle.net/woowyl/t6xa6c82/3/)
 
 ---
 ## priority
@@ -158,10 +162,10 @@ AngularJS directive
  - false：继承不隔离，父子绑定，两者同步
  - true ：继承且隔离，父变子变，子变父不变（checkbox 全选 单选）
  
-[示例](https://jsfiddle.net/woowyl/a8vzzxr4/3/)
+[scope true/false示例](https://jsfiddle.net/woowyl/a8vzzxr4/3/)
 
 ---
-### { @，=，&}
+### { @，=，&} 创建一个全新的隔离作用域
 均需要通过自定义指令的属性进行传递
 - @ : 不继承隔离，但通过绑定实现了 true的功能
 - = : 不继承不隔离，通过绑定实现了，false的功能
