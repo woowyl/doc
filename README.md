@@ -6,7 +6,7 @@
 
 ## vue-router
 - 这是我再返利网，关于Vue-router使用的理解
-- 文件中包含demo,但没有使用.vue的格式
+- 文件中包含demo, 但没有使用.vue的格式
 
 ## app-simulator
 - 这是我参加完2017D2后的一篇收获
