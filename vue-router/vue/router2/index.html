@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>路由的定义</title>
+    <!-- 第一步  引入js文件-->
+    <script src = 'libs/vue-2.4.4.js'></script>
+    <script src = 'libs/vue.router.js'></script>
+    <link rel="stylesheet" type="text/css" href="css/router.css">
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        a {
+            text-decoration: none;
+            color: #333;
+        }
+        #V_router{
+            padding: 50px 100px;
+            color:#333;
+        }
+        h1 {
+            display: block;
+            width: 400px;
+            font-size: 24px;
+            padding: 20px;
+            border-bottom:1px solid #ccc;
+        }
+        .nav-group {
+            display: inline-block;
+            width: 200px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-top: 20px;
+            display: inline-block;
+        }
+        .nav-group .link{
+            list-style: none;
+            height: 50px;
+            line-height: 50px;
+            border-bottom: 1px solid #ccc;
+            padding-left: 40px;
+        }
+        .nav-group .link a {
+            display: inline-block;
+            width: 100%;
+        }
+        .nav-group .link:last-child {
+            border: 0;
+        }
+        .content {
+            display: inline-block;
+            width: 500px;
+            border-bottom: 1px solid #ccc;
+            padding: 50px 0;
+            margin-left: 50px;
+        }
+        .content h2 {
+            font-size: 25px;
+        }
+        .content p {
+            margin-top: 20px;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div id = "V_router">
+        
+        <h1>动态路由，路由参数</h1>
+        <div class="nav-group">
+            <!-- 使用 router-link 组件来导航. -->
+            <!-- 通过传入 `to` 属性指定链接. -->
+            <!-- <router-link> 默认会被渲染成一个 `<a>` 标签 -->
+            <ul>
+                <li class="link">
+                    <router-link to="/type/Java">Java</router-link>
+                </li>
+                <li class="link">
+                    <router-link to="/type/C++">C++</router-link>
+                </li>
+                <li class="link">
+                    <router-link to="/type/JavaScript">JavaScript</router-link>
+                </li>
+            </ul>   
+        </div>
+
+        <router-view>
+            
+        </router-view>
+    </div>
+</body>
+<script type="text/javascript" src='components/index.js'></script>
+<script type="text/javascript" src = 'js/app.js'></script>
+</html>

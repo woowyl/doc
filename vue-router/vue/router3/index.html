@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>路由的定义</title>
+    <!-- 第一步  引入js文件-->
+    <script src = 'libs/vue-2.4.4.js'></script>
+    <script src = 'libs/vue.router.js'></script>
+    <link rel="stylesheet" type="text/css" href="css/router.css">
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        a {
+            text-decoration: none;
+            color: #333;
+        }
+        #V_router{
+            padding: 50px 100px;
+            color:#333;
+            position: relative;
+        }
+        h1 {
+            display: block;
+            width: 400px;
+            font-size: 24px;
+            padding: 20px;
+            border-bottom:1px solid #ccc;
+        }
+        .nav-group {
+            display: inline-block;
+            width: 200px;
+            position: absolute;
+
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-top: 20px;
+            display: inline-block;
+        }
+        .nav-group .link{
+            list-style: none;
+            height: 50px;
+            line-height: 50px;
+            border-bottom: 1px solid #ccc;
+            padding-left: 40px;
+        }
+        .nav-group .link a {
+            display: inline-block;
+            width: 100%;
+        }
+        .nav-group .link:last-child {
+            border: 0;
+        }
+        .tab-div {
+            display: inline-block;
+        }
+        .tab li {
+            list-style: none;
+            float: left;
+            width: 90px;
+            height: 40px;
+            line-height: 40px;
+            background: #eee;
+            border-radius: 4px;
+            margin-right: 2px;
+            text-align: center;
+            margin-top: 30px;
+            cursor: pointer;
+        }
+        .content {
+            display: inline-block;
+            width: 500px;
+            border-bottom: 1px solid #ccc;
+            padding: 50px 0;
+            padding-bottom: 10px;
+            margin-left: 50px;
+        }
+        .content h2 {
+            font-size: 25px;
+        }
+        .content p {
+            margin-top: 20px;
+            font-size: 12px;
+        }
+
+        .detail {
+            display: inline-block;
+        }
+        .detail label{
+            padding: 30px 50px;
+        }
+    </style>
+</head>
+<body>
+    <div id = "V_router">
+        
+        <h1>路由demo</h1>
+        <div class="nav-group">
+            <!-- 使用 router-link 组件来导航. -->
+            <!-- 通过传入 `to` 属性指定链接. -->
+            <!-- <router-link> 默认会被渲染成一个 `<a>` 标签 -->
+            <ul>
+                <li class="link">
+                    <router-link to="/index">首页</router-link>
+                </li>
+                <li class="link">
+                    <router-link to="/about">关于我</router-link>
+                </li>
+                <li class="link">
+                    <router-link to="/tag">标签页</router-link>
+                </li>
+            </ul>   
+        </div>
+
+        <router-view style = "position: absolute; left: 300px;">
+            
+        </router-view>
+    </div>
+</body>
+<script type="text/javascript" src='components/index.js'></script>
+<script type="text/javascript" src='components/about.js'></script>
+<script type="text/javascript" src = 'js/app.js'></script>
+</html>
