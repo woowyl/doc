@@ -11,5 +11,5 @@
 ## app-simulator
 - 这是我参加完2017D2后的一篇收获
 - 文章的主要内容是讲，在pc端模拟手机调试
-- simulator是macos上的工具，需要依赖xcode
+- simulator是Macos上的工具，需要依赖xcode
 
