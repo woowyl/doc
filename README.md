@@ -1,6 +1,6 @@
 # sharing-notes
 
-    建议使用Marp 打开
+    建议使用[Marp](https://yhatt.github.io/marp/) 打开
 ## ng-directive
 - 这篇文章是我对angularjs directive的理解
 
