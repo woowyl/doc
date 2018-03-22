@@ -12,7 +12,7 @@
 
 ---
 
-## 我对开发流程的一些想法
+## 对开发流程的一些想法
 
 ### 开发技术栈 
   - webpack   
@@ -21,7 +21,7 @@
   - css预处理器（可选）
 
 ### 开发大体流程 
- 1. clone空的webpack+vue的基础架构，执行`npm install` 完成基础安装
+ 1. clone空的[webpack+vue](https://github.com/woowyl/vue-webpack)的基础架构，执行`npm install` 完成基础安装
  2. 在src下开发项目，并使用dev-server查看开发效果
  3. 开发完成后，提交 /src 和相对于的package.json .babel等文件
  4. 内测更新代码，执行build命令，进行测试
