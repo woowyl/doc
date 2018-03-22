@@ -23,7 +23,7 @@
 ### 开发大体流程 
  1. clone空的[webpack+vue](https://github.com/woowyl/vue-webpack)的基础架构，执行`npm install` 完成基础安装
  2. 在src下开发项目，并使用dev-server查看开发效果
- 3. 开发完成后，提交 /src 和相对于的package.json .babel等文件
+ 3. 开发完成后，提交 /src 和相对应的package.json .babel等文件
  4. 内测更新代码，执行build命令，进行测试
  5. 内测有问题，开发对 /src进行修改提交，内测再次执行build直到内测通过
  6. 内测通过，外测更新代码，并执行build命令，进行测试
