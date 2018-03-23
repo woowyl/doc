@@ -1,3 +1,6 @@
+
+[TOC]
+
 # sharing-notes
 
  建议使用 [Marp](https://yhatt.github.io/marp/) 打开
@@ -13,3 +16,6 @@
 - 文章的主要内容是讲，在pc端模拟手机调试
 - simulator是Macos上的工具，需要依赖xcode
 
+## fanli-project
+- 这是关于工程改造的一些思考
+- 列出了一些改进方案和仍需思考的问题
