@@ -2,7 +2,7 @@
 
 ### 计划目录结构
 - 开发目录
-```javascript
+```
     src: 
         ├─assets
         |   └─images
@@ -23,11 +23,16 @@
         |
         ├─template
         |
-        └─components   //存放页面中共用的组件，包括了公共的
+        ├─templatecomponents   //存放页面中共用的组件，包括了公共的
+        |
+        └─store (vuex 可选)
+            ├─action.js
+            ├─index.js
+            └─mutations.js
  
 ```
 - 打包后目录
-```javascript
+```
     dist:
         ├─assets
         |   └─images 
