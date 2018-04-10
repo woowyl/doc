@@ -54,7 +54,7 @@
     // 创建一个CLI => 需要一个基础的demo
     npm install -g bob-builder
 
-    //通过 bob-builder创建一个project (可以选择参数是否支持Vuex)
+    //通过 bob-builder创建一个project (可以选择参数是否支持Vuex)
     bob create project-name
 
 ```
