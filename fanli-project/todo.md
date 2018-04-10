@@ -83,7 +83,7 @@
     - 是否准备一个fanli-fe github orgnization?
 
 
-### Refrence
+### Reference
  - [vue-cli是如何工作的](https://segmentfault.com/a/1190000009803941)
   vue-cli 3.0后将init转化为create 
 
