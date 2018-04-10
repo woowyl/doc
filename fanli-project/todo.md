@@ -65,7 +65,7 @@
 ```
 
 ### 我们怎么做
-- 项目粒度拆分成一个项目一个project,比如超返的搜索、超返的有料、基础返的loan、...都是一个独立的项目
+- 项目粒度拆分成一个项目一个project,比如超返的搜索、超返的有料、基础返的loan、...都是一个独立的项目
 - 产出一个空的vue-project
 - 一个公共的文件夹，base.css base.js 
 - 将vue-project 发布到npm 可以使用`bob`命令下载vue-project  
