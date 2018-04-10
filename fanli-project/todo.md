@@ -23,7 +23,7 @@
         |
         ├─template
         |
-        ├─templatecomponents   //存放页面中共用的组件，包括了公共的
+        ├─components   //存放页面中共用的组件，包括了公共的
         |
         └─store (vuex 可选)
             ├─action.js
