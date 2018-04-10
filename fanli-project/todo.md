@@ -65,7 +65,7 @@
 ```
 
 ### 我们怎么做
-
+- 项目粒度拆分成一个项目一个project,比如超返的搜索、超返的有料、基础返的loan、...都是一个独立的项目
 - 产出一个空的vue-project
 - 一个公共的文件夹，base.css base.js 
 - 将vue-project 发布到npm 可以使用`bob`命令下载vue-project  
@@ -80,6 +80,10 @@
     - vuejs 等库是否需要统一入口统一版本
         - vuejs需要打包到项目里
     - 打包时promise问题
+    - 发布如何兼容替换旧的项目
+    - 是否可以提高开发效率
+        - 可以解决项目的耦合、结构清晰
+        - 适合中大型项目，便于维护 
 
 - 发布
     - 把文件夹放到哪里？比如super/h5/search、 super/pc/mama/、 haitao/h5/search 如果是一个新项目，发布拿到的是一个文件，/search如何决定放哪里？
