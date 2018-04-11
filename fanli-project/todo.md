@@ -6,44 +6,58 @@
     src: 
         ├─assets
         |   └─images
+        |       ├─common
+        |       ├─index
+        |       ├─page1
+        |       ├─...
         |
         ├─pages
         |   ├─index
         |   |   ├─main.js
         |   |   ├─router
         |   |   ├─components
-        |   |   └─index.vue
+        |   |   ├─index.vue
+        |   |   └─store (vuex 可选)
+        |   |       ├─action.js
+        |   |       ├─index.js
+        |   |       └─mutations.js
         |   |
         |   ├─page1
         |   |   ├─main.js
         |   |   ├─router
         |   |   ├─components
         |   |   └─index.vue
+        |   |
+        |   ├─page2          //单页只有html的页面
+        |   |   ├─main.js
+        |   |   └─index.vue
         |   ├─ ...
         |
         ├─template
         |
-        ├─components   //存放页面中共用的组件，包括了公共的
-        |
-        └─store (vuex 可选)
-            ├─action.js
-            ├─index.js
-            └─mutations.js
+        └─components        //存放页面中共用的组件，包括了公共的
+        
  
 ```
 - 打包后目录
 ```
     dist:
-        ├─assets
-        |   └─images 
         |
         ├─index.html
         |
         ├─index
+        |   ├─images
         |   ├─css
         |   └─js 
         |
         ├─page1
+        |   ├─images
+        |   ├─css
+        |   ├─js
+        |   └─index.html
+        |
+        ├─page2
+        |   ├─images
         |   ├─css
         |   ├─js
         |   └─index.html
