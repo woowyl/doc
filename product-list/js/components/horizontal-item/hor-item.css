@@ -1,0 +1,141 @@
+.hor-product-wrapper {
+    width: 100%;
+    position: relative;
+    background: #fff;
+}
+.hor-product-wrapper .product-images-mask {
+    position: absolute;
+    width: 2.8rem;
+    height: 2.8rem;
+    z-index: 10;
+    background:  rgba(199,199,199,.1);
+    border-radius: .2rem;
+}
+.hor-product-wrapper .product-images {
+    background:  rgba(199,199,199,1);
+    border-radius: .2rem;
+    width: 2.8rem;
+    height: 2.8rem;
+}
+.hor-product-wrapper .product-desc {
+    position: relative;
+    display: -webkit-box;
+    -webkit-box-pack: center;
+    -webkit-box-orient:vertical;
+    margin-left: .2rem;
+}
+.hor-product-wrapper .product-desc .item-collect-wrapper{
+    top: -0.05rem;
+}
+.hor-product-wrapper .product-name {
+    width: 3.3rem;
+    font-size: .3rem;
+    color: #111;
+}
+.hor-product-wrapper .product-recommend {
+    width: 3.3rem;
+    font-size: .3rem;
+    color: #111;
+    min-height: .4rem;
+}
+.hor-product-wrapper .product-price {
+    display: -webkit-box;
+    -webkit-box-pack: justify;
+    -webkit-box-align: center;
+    margin-top: .26rem;
+}
+.hor-product-wrapper .product-discount {
+    font-size: .24rem;
+    color: #FF3726;
+}
+.hor-product-wrapper .product-discount .money-symbol{
+    font-size: .22rem;
+    color: #FF3726;
+}
+.hor-product-wrapper .product-discount .money-value{
+    font-size: .4rem;
+}
+.hor-product-wrapper .product-coupon {
+    position: relative;
+    height: .48rem;
+    font-size: .26rem;
+    color: #FFF;
+    background-image: -webkit-gradient(linear, left top, right top, from(#FC8440), to(#FF2D23));
+    background-image: linear-gradient(90deg, #FC8440 0%, #FF2D23 100%);
+}
+.hor-product-wrapper .product-coupon.quan {
+    padding: 0 .2rem;
+    border-radius: .04rem;
+}
+.hor-product-wrapper .product-coupon.quan::before {
+    content: '';
+    position: absolute;
+    display: block;
+    width: .16rem;
+    height: .16rem;
+    border-radius: 100%;
+    background: #fff;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+    left: -.1rem;
+}
+.hor-product-wrapper .product-coupon.quan::after {
+    content: '';
+    position: absolute;
+    display: block;
+    width: .16rem;
+    height: .16rem;
+    border-radius: 100%;
+    background: #fff;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+    right: -.1rem;
+}
+.hor-product-wrapper .product-coupon.fan {
+    padding-left: .3rem;
+    padding-right: .13rem;
+    border-radius: .04rem;
+}
+.hor-product-wrapper .product-coupon.fan:before {
+    content: "";
+    position: absolute;
+    top: -0.02rem;
+    left: -.2rem;
+    width: 0;
+    border-top: .2rem solid #fff;
+    border-left: .2rem solid transparent;
+    border-right: .2rem solid transparent;
+}
+
+.hor-product-wrapper .product-coupon.fan:after {
+    content: "";
+    position: absolute;
+    left: -.2rem;
+    bottom: -.02rem;
+    width: 0;
+    border-bottom: .2rem solid #fff;
+    border-left: .2rem solid transparent;
+    border-right: .2rem solid transparent;
+}
+
+.hor-product-wrapper .product-coupon.fan .radius {
+    position: absolute;
+    top: .2rem;
+    left: .1rem;
+    width: .08rem;
+    height: .08rem;
+    border-radius: 50%;
+    background: #fff;
+}
+
+
+.hor-product-wrapper .product-info {
+    display: -webkit-box;
+    -webkit-box-pack: justify;
+    -webkit-box-align: center;
+    font-size: .24rem;
+    color: #999;
+    margin-top: .2rem;
+}

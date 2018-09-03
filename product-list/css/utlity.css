@@ -1,0 +1,20 @@
+.fui-uti-ver-mid { display: -webkit-box; -webkit-box-orient: vertical; -webkit-box-pack: center; -webkit-box-align: center; }
+.fui-uti-hor-mid { display: -webkit-box; -webkit-box-orient: horizontal; -webkit-box-pack: center; -webkit-box-align: center; }
+.fui-uti-va-mid { vertical-align: middle; }
+
+.fui-uti-arrow { display: inline-block; width: 8px; height: 8px; border: 1px solid #666; border-bottom: none; border-left: none; font-style: normal; -webkit-transform: rotate(135deg); transform: rotate(135deg); -webkit-transition: transform .3s ease-in-out; transition: transform .3s ease-in-out; }
+.fui-uti-arrow-up { -webkit-transform: rotate(-45deg); transform: rotate(-45deg); }
+.fui-uti-arrow-left { -webkit-transform: rotate(225deg); transform: rotate(225deg); }
+.fui-uti-arrow-right { -webkit-transform: rotate(45deg); transform: rotate(45deg); }
+
+.fui-uti-plus { position: relative; display: inline-block; width: 0.3rem; height: 0.3rem; vertical-align: middle; }
+.fui-uti-plus:before { position: absolute; top: 0.14rem; left: 0; width: 0.3rem; height: 0; border-top: 0.02rem solid #fff; content: ""; }
+.fui-uti-plus:after { position: absolute; top: 0; left: 0.14rem; width: 0; height: 0.3rem; border-left: 0.02rem solid #fff; content: ""; }
+
+.fui-uti-nowrap-line { display: -webkit-box; overflow: hidden; text-overflow: ellipsis; -webkit-box-orient: vertical; -webkit-line-clamp: 1; }
+.fui-uti-nowrap-two-line { display: -webkit-box; overflow: hidden; text-overflow: ellipsis; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
+
+@-webkit-keyframes fui-loading-rotate {0% {-webkit-transform: rotate(0deg);} 100% { -webkit-transform: rotate(360deg);}}
+@keyframes fui-loading-rotate {0% {transform: rotate(0deg);}100%{transform: rotate(360deg);}}
+.fui-uti-loading{display:-webkit-box; display: flex; -webkit-box-pack:center;-webkit-box-align:center; justify-content:center; align-items: center; margin:0.1rem 0; color: #999; }
+.fui-uti-loading:before {content: ''; width: 0.29rem;height: 0.29rem; margin-right: 0.08rem;background: url(/webapp/images/icons/loading.png) no-repeat;-webkit-background-size: 100% auto;background-size: 100% auto;-webkit-transform-origin: center; -webkit-animation: fui-loading-rotate 1s linear infinite; animation: fui-loading-rotate 1s linear infinite;}

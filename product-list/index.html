@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>商品列表demo</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="address=no">
+    <meta name="format-detection" content="email=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+    <link rel="stylesheet" href="./asset/css/base.css">
+    <script src="./asset/js/attrsniffer.js"></script>
+    <script src="./asset/js/libs/vue-2.4.4.js"></script>
+    <script src="./asset/js/libs/vue.router.js"></script>
+    <script src="./asset/js/libs/jquery-2.1.1.js"></script>
+    <script src="./asset/js/libs/jquery.lazyload.js"></script>
+    <link rel="stylesheet" href="./css/app.css">
+    <link rel="stylesheet" href="./css/utlity.css">
+    <!-- 组件加载 -->
+    <link rel="stylesheet" href="./js/components/horizontal-item/hor-item.css">
+    <script src="./js/components/horizontal-item/hor-item.vue.js"></script>
+
+    <link rel="stylesheet" href="./js/components/vertical-item/ver-item.css">
+    <script src="./js/components/vertical-item/vertical-item.vue.js"></script>
+
+    <link rel="stylesheet" href="./js/components/nav/nav.css">
+    <script src="./js/components/nav/nav.vue.js"></script>
+
+</head>
+
+<body>
+    <div id="J_app">
+        <nav-bar></nav-bar>
+        <router-view></router-view>
+
+        
+        <div class="product-list">
+            <ul>
+                <li v-for="n in 10">
+                    <hor-product></hor-product>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+
+<script src="./js/app.js"></script>
+</html>
