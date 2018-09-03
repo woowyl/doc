@@ -22,6 +22,7 @@
     display: -webkit-box;
     -webkit-box-pack: center;
     -webkit-box-orient:vertical;
+    -webkit-box-flex: 1;
     margin-left: .2rem;
 }
 .hor-product-wrapper .product-desc .item-collect-wrapper{

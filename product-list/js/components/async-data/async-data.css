@@ -1,0 +1,26 @@
+.bottom-tip {
+    margin-top: .2rem;
+    margin-bottom: .2rem;
+    font-size: .24rem;
+    text-align: center;
+    color: #999;
+}
+
+.bottom-tip::before,
+.bottom-tip::after {
+    content: '';
+    display: inline-block;
+    width: .4rem;
+    height: .01rem;
+    margin-bottom: .06rem;
+    border-bottom: 1px solid #ccc;
+    font-size: .24rem;
+}
+
+.bottom-tip::before {
+    margin-right: .17rem;
+}
+
+.bottom-tip::after {
+    margin-left: .17rem;
+}

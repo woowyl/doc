@@ -1,7 +1,6 @@
 //横向商品组件
 (function() {
     var tpl = '<div class="hor-product-wrapper fui-uti-hor-mid fui-grid J_need_exposure">'+
-        '          <div class="product-images-mask" @click="gotoProduct()"></div>'+
         '          <img @click="gotoProduct()" class="product-images fui-span0 J_lazyimg" v-bind:data-original="product.img" src="//static2.51fanli.net/common/images/loading/grey_spacer.png" alt="">'+
         '          <div class="product-desc fui-span1">'+
         // '              <fav-item :item=product></fav-item>' +
@@ -28,7 +27,7 @@
                 product: this.item || {
                     pid:0,
                     id :0,
-                    img: null,
+                    img: 'http://placeimg.com/300/300',
                     title: '标题',
                     shopName: '商城名',
                     shopPrice: '100',

@@ -6,10 +6,11 @@
         routes: [
             {
                 path: '/:category',
-                components: {
-                    template: '',
-                    props: []
-                }
+                component: {
+                    template: '<product-list :category = "category"></product-list>',
+                    props: ['category']
+                },
+                props: true
             }, {
                 path: '/',
                 redirect: '/0',

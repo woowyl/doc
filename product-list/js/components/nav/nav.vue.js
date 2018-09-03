@@ -63,13 +63,10 @@
         mounted: function() {
             this.getcategoryList();
             $navbar = $("#J_nav_ul");
-            // this.curType= this.$route.params.category;
+            this.curType= this.$route.params.category;
         },
         updated: function() {
-            var that = this;
-            setTimeout(function(){
-                that.setSelectedPosition($navbar, $("#J_nav_ul .cur")[0]);
-            },100);
+            this.setSelectedPosition($navbar, $("#J_nav_ul .cur")[0]);
         }
     });
 })();
