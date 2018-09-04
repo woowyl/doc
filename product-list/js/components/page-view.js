@@ -5,7 +5,7 @@
     var tpl = '<div class="item-wrapper">'+
         '         <async-data @scrollfun="getDataList()" ref="async" :key="$route.path">'+
         '            <ul slot="scroll-async">'+
-        '                <li v-for="n in itemList" class="item-li">'+
+        '                <li v-for="(item, index) in itemList" class="item-li">'+
         '                    <hor-product></hor-product>'+
         '                </li>'+
         '            </ul>'+
@@ -22,10 +22,15 @@
             }
         },
         watch: {
-            '$route': function(to, from) {
-                // 对路由变化作出响应...
-                this.page = 1;
-                this.getDataList();
+            // '$route': function(to, from) {
+            //     // 对路由变化作出响应...
+            //     this.page = 1;
+            //     this.getDataList();
+            // }
+        },
+        computed: {
+            random: function() {
+                return Math.random();
             }
         },
         methods: {
@@ -56,8 +61,6 @@
         },
         mounted: function() {
             this.getDataList();
-            console.log(this.category);
-            
         }
     });
 })();

@@ -27,11 +27,11 @@
                 product: this.item || {
                     pid:0,
                     id :0,
-                    img: 'http://placeimg.com/300/300',
-                    title: '标题',
+                    img: 'http://placeimg.com/300/300?t='+Math.random(),
+                    title: '标题'+ this.$route.para,
                     shopName: '商城名',
                     shopPrice: '100',
-                    sales : 100,
+                    sales : 10000,
                     isPromotion: 0,
                     finalPrice: 110,
                     itemPromotion:{discount_price: "938", coupon_price: "160"},
@@ -70,6 +70,8 @@
             }
         },
         mounted: function() {
+            console.log('hor-item');
+            
             $(this.$el).find(".J_lazyimg").lazyload({ threshold : 400 });
         }
     });
