@@ -28,7 +28,7 @@
                     pid:0,
                     id :0,
                     img: 'http://placeimg.com/300/300?t='+Math.random(),
-                    title: '标题'+ this.$route.para,
+                    title: '标题'+this.$route.params.category,
                     shopName: '商城名',
                     shopPrice: '100',
                     sales : 10000,
@@ -70,8 +70,6 @@
             }
         },
         mounted: function() {
-            console.log('hor-item');
-            
             $(this.$el).find(".J_lazyimg").lazyload({ threshold : 400 });
         }
     });

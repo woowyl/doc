@@ -61,6 +61,7 @@
         },
         mounted: function() {
             this.getDataList();
+            console.log('view router mounted');
         }
     });
 })();
