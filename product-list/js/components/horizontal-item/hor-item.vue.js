@@ -20,7 +20,7 @@
         '      </div>';
 
     Vue.component('hor-product',{
-        props: ['item'],
+        props: ['index', 'item'],
         template: tpl,
         data: function() {
             return {
@@ -28,7 +28,7 @@
                     pid:0,
                     id :0,
                     img: 'http://placeimg.com/300/300?t='+Math.random(),
-                    title: '标题'+this.$route.params.category,
+                    title: '标题'+this.$route.params.category+'-'+this.index,
                     shopName: '商城名',
                     shopPrice: '100',
                     sales : 10000,
