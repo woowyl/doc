@@ -7,24 +7,31 @@
         '              <p class="product-name fui-uti-nowrap-line" @click="gotoProduct()">{{product.title}}</p>'+
         '              <p class="product-recommend bold fui-uti-nowrap-line" @click="gotoProduct()">{{product.recommend_info}}</p>'+
         '              <div class="product-price" @click="gotoProduct()">'+
-        '                  <p class="product-discount">{{priceText}}<span class="money-symbol bold">￥</span><span class="money-value bold">{{product.finalPrice}}</span>'+
+        '                  <p v-if="!isHolder" class="product-discount">{{priceText}}<span class="money-symbol bold">￥</span><span class="money-value bold">{{product.finalPrice}}</span>'+
         '                  </p>'+
-        '                  <p class="product-coupon fui-uti-hor-mid" :class="product.isPromotion!=0? \'quan\' : \'fan\'"><i class="radius" v-if="product.isPromotion==0"></i><span>{{couponText}}</span>'+
+        '                  <p v-if="!isHolder" class="product-coupon fui-uti-hor-mid" :class="product.isPromotion!=0? \'quan\' : \'fan\'"><i class="radius" v-if="product.isPromotion==0"></i><span>{{couponText}}</span>'+
         '                  </p>'+
         '              </div>'+
         '              <div class="product-info" @click="gotoProduct()">'+
-        '                  <p>{{product.shopName}}￥{{product.shopPrice}}</p>'+
+        '                  <p v-if="!isHolder">{{product.shopName}}￥{{product.shopPrice}}</p>'+
         '                  <p v-show="product.sales>0">月销{{product.sales | thousandFormat}}</p>'+
         '              </div>'+
         '          </div>'+
         '      </div>';
 
     Vue.component('hor-product',{
-        props: ['index', 'item'],
+        props: ['index', 'item', 'type'],
         template: tpl,
         data: function() {
             return {
-                product: this.item || {
+                /*
+                * 这里为了掩饰加入了自定义的元素，实际开发中只需
+                * 
+                * product: this.item,
+                * 
+                */ 
+                // 以下为演示用代码
+                product: this.type=='empty'? {}: {
                     pid:0,
                     id :0,
                     img: 'http://placeimg.com/300/300?t='+Math.random(),
@@ -38,13 +45,17 @@
                     itemPoint: 120,
                     tips: 'tips',
                     link: null
-                }
+                },
             }
         },
         methods: {
         },
         computed:{
+            isHolder: function() {
+                return this.type=='empty';
+            },
             couponText: function() {
+                if (this.isHolder) return '';
                 // 是否是满减
                 if (this.product.isPromotion) {
                     if (parseInt(this.product.itemPromotion.discount_price) > parseInt(this.product.shopPrice)) {
@@ -57,6 +68,7 @@
                 }
             },
             priceText: function() {
+                if (this.isHolder) return '';
                  // 是否是满减
                 if (this.product.isPromotion!=0) {
                     if (parseInt(this.product.itemPromotion.discount_price) > parseInt(this.product.shopPrice)) {
@@ -70,6 +82,7 @@
             }
         },
         mounted: function() {
+            
             $(this.$el).find(".J_lazyimg").lazyload({ threshold : 400 });
         }
     });

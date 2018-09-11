@@ -137,6 +137,13 @@
     -webkit-box-pack: justify;
     -webkit-box-align: center;
     font-size: .24rem;
-    color: #999;
+    color: #ccc;
     margin-top: .2rem;
+}
+/* 空占位符样式 */
+.empty-holder .product-images {
+}
+.empty-holder .product-name, .empty-holder .product-price, .empty-holder .product-info {
+    background: #eee;
+    min-height: .2rem;
 }

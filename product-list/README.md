@@ -9,7 +9,9 @@
 
     - 手机端，一直下拉刷新dom过多后的卡顿情况
     - 加载体验优化，当接口返回时间较长时，实现类似以下效果  
-    <img src="./images/holder.jpg" width="400px">
+    <img src="./images/holder.jpg" width="400px">  
+
+        - 可分为首屏的样式和切换时的样式
     - 组件抽象和使用方式
     - 切换动画
     - 。。。

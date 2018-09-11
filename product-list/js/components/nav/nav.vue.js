@@ -52,7 +52,7 @@
                 var selectedPosition = $selected.offsetLeft;
                 
                 var wrapperWidth = $wapper.width();
-                var scrollLength = selectedPosition - (wrapperWidth / 2)+50;
+                var scrollLength = selectedPosition - (wrapperWidth / 2);
                 if (scrollLength > 0) {
                     $wapper.animate({ scrollLeft: scrollLength }, 300);
                 } else if ($wapper[0].scrollLeft > 0) {

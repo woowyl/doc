@@ -30,7 +30,6 @@
                     if (that.isSending || that.noMore || that.$vnode.key != that.$parent.category) {
                         return;
                     }
-                    console.log(that.$vnode.key, that.$parent.category, that.isSending);
                     if ($window.scrollTop() + $window.height() >= $document.height() - 2*$window.height()) {
                         that.isSending = true;
                         that.$emit('scrollfun');

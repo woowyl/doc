@@ -3,13 +3,20 @@
     var $window = $(window);
 
     var tpl = '<div class="item-wrapper">'+
-        '         <async-data @scrollfun="getDataList()" ref="async" :key="category">'+
+        '         <async-data v-if="itemList && itemList.length>0" @scrollfun="getDataList()" ref="async" :key="category">'+
         '            <ul slot="scroll-async">'+
         '                <li v-for="(item, index) in itemList" class="item-li">'+
-        '                    <hor-product :index="index" :key="random"></hor-product>'+
+        '                    <hor-product :index="index" :key="random" type="normal"></hor-product>'+
         '                </li>'+
         '            </ul>'+
         '         </async-data>'+
+        '         <div v-else class="empty-holder">'+
+        '              <ul>'+
+        '                   <li v-for="n in 10" class="item-li">'+
+        '                       <hor-product type="empty"></hor-product>'+
+        '                   </li>'+
+        '              </ul>'+
+        '         </div>'+
         '        </div>';
 
     Vue.component('product-list', {
@@ -20,8 +27,9 @@
                 itemList: [],
                 page:1,
                 // 此处为模拟的临界值，实际开发中并不需要
-                maxPage: parseInt(this.category),
-                isSending: false
+                maxPage: parseInt(this.category)+3,
+                isSending: false,
+                
             }
         },
         watch: {
@@ -56,6 +64,7 @@
                 } else {
                     // 这句用于关闭异步插件
                     this.page = 1;
+                    window.scroll(0, 0);
                     this.itemList = [];
                     this.getDataList();
                 }
@@ -79,12 +88,18 @@
                         } else {
                             // 返回的列表数据已空
                             $window.off("scroll.LOADMORE"+ that.category);
-                            that.$refs.async.noMore = true;
+                            that.$nextTick(function() {
+                                that.$refs.async.noMore = true;
+                            });
+                            
                         }
                     } else {
                         Fanli.Utility.Toast.open(res.info);
                     }
-                    that.$refs.async.isSending = false;
+                    // 需要在组件渲染完成之后
+                    that.$nextTick(function() {
+                        that.$refs.async.isSending = false;
+                    });
                     that.isSending = false;
                 });
             },
@@ -103,7 +118,6 @@
         },
         mounted: function() {
             this.initPage();
-            console.log('view router mounted');
         }
     });
 })();
