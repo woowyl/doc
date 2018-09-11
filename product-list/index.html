@@ -14,31 +14,93 @@
     <link rel="stylesheet" href="./asset/css/base.css">
     <link rel="stylesheet" href="./asset/css/utlity.css">
     <script src="./asset/js/attrsniffer.js"></script>
-    <script src="./asset/js/libs/vue-2.4.4.js"></script>
-    <script src="./asset/js/libs/vue.router.js"></script>
-    <script src="./asset/js/libs/jquery-2.1.1.js"></script>
-    <script src="./asset/js/libs/jquery.lazyload.js"></script>
+
     <!-- 以上是在公共文件的添加 -->
     <link rel="stylesheet" href="./css/app.css">
-    <!-- 组件加载 -->
     <link rel="stylesheet" href="./js/components/horizontal-item/hor-item.css">
-    <script src="./js/components/horizontal-item/hor-item.vue.js"></script>
-
     <link rel="stylesheet" href="./js/components/nav/nav.css">
-    <script src="./js/components/nav/nav.vue.js"></script>
-
-    <script src="./js/components/async-data/async-data.vue.js"></script>
     <link rel="stylesheet" href="./js/components/async-data/async-data.css">
-    
-    <script src="./js/components/page-view.js"></script>
+
 </head>
 
 <body>
+    <div class="empty-holder">
+        <div class="nav-bar fui-uti-hor-mid"></div>
+        <div class="item-wrapper">
+            <ul>
+                <li class="item-li">
+                    <div class="hor-product-wrapper fui-uti-hor-mid fui-grid">
+                        <div alt="" class="product-images fui-span0 J_lazyimg"style="display: block;"></div>
+                        <div class="product-desc fui-span1">
+                            <p class="product-name fui-uti-nowrap-line"></p>
+                            <div class="product-price"></div>
+                            <div class="product-info"></div>
+                        </div>
+                    </div>
+                </li>
+                <li class="item-li">
+                    <div class="hor-product-wrapper fui-uti-hor-mid fui-grid">
+                        <div alt="" class="product-images fui-span0 J_lazyimg"style="display: block;"></div>
+                        <div class="product-desc fui-span1">
+                            <p class="product-name fui-uti-nowrap-line"></p>
+                            <div class="product-price"></div>
+                            <div class="product-info"></div>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="item-li">
+                    <div class="hor-product-wrapper fui-uti-hor-mid fui-grid">
+                        <div alt="" class="product-images fui-span0 J_lazyimg"style="display: block;"></div>
+                        <div class="product-desc fui-span1">
+                            <p class="product-name fui-uti-nowrap-line"></p>
+                            <div class="product-price"></div>
+                            <div class="product-info"></div>
+                        </div>
+                    </div>
+                </li>
+                <li class="item-li">
+                    <div class="hor-product-wrapper fui-uti-hor-mid fui-grid">
+                        <div alt="" class="product-images fui-span0 J_lazyimg"style="display: block;"></div>
+                        <div class="product-desc fui-span1">
+                            <p class="product-name fui-uti-nowrap-line"></p>
+                            <div class="product-price"></div>
+                            <div class="product-info"></div>
+                        </div>
+                    </div>
+                </li>
+                <li class="item-li">
+                    <div class="hor-product-wrapper fui-uti-hor-mid fui-grid">
+                        <div alt="" class="product-images fui-span0 J_lazyimg"style="display: block;"></div>
+                        <div class="product-desc fui-span1">
+                            <p class="product-name fui-uti-nowrap-line"></p>
+                            <div class="product-price"></div>
+                            <div class="product-info"></div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            
+        </div>
+    </div>
     <div id="J_app">
         <nav-bar></nav-bar>
         <router-view></router-view>
     </div>
 </body>
 
+<script src="./asset/js/libs/vue-2.4.4.js"></script>
+<script src="./asset/js/libs/vue.router.js"></script>
+<script src="./asset/js/libs/jquery-2.1.1.js"></script>
+<script src="./asset/js/libs/jquery.lazyload.js"></script>
+<!-- 组件加载 -->
+<script src="./js/components/horizontal-item/hor-item.vue.js"></script>
+
+<script src="./js/components/nav/nav.vue.js"></script>
+
+<script src="./js/components/async-data/async-data.vue.js"></script>
+
+<script src="./js/components/page-view.js"></script>
 <script src="./js/app.js"></script>
+
 </html>

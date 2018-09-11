@@ -34,7 +34,7 @@
                 product: this.type=='empty'? {}: {
                     pid:0,
                     id :0,
-                    img: 'http://placeimg.com/300/300?t='+Math.random(),
+                    img: 'http://placeimg.com/300/300?t='+this.$route.params.category+'-'+this.index,
                     title: '标题'+this.$route.params.category+'-'+this.index,
                     shopName: '商城名',
                     shopPrice: '100',
@@ -56,33 +56,14 @@
             },
             couponText: function() {
                 if (this.isHolder) return '';
-                // 是否是满减
-                if (this.product.isPromotion) {
-                    if (parseInt(this.product.itemPromotion.discount_price) > parseInt(this.product.shopPrice)) {
-                        return "满"+this.product.itemPromotion.discount_price+"减"+this.product.itemPromotion.coupon_price;
-                    } else {
-                        return this.product.tips;
-                    }
-                } else {
                     return "返"+this.product.itemPoint;
-                }
             },
             priceText: function() {
                 if (this.isHolder) return '';
-                 // 是否是满减
-                if (this.product.isPromotion!=0) {
-                    if (parseInt(this.product.itemPromotion.discount_price) > parseInt(this.product.shopPrice)) {
-                        return ""
-                    } else {
-                        return "券后";
-                    }
-                } else {
                     return "返后"
-                }
             }
         },
         mounted: function() {
-            
             $(this.$el).find(".J_lazyimg").lazyload({ threshold : 400 });
         }
     });

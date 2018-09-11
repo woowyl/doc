@@ -3,7 +3,7 @@
     var $window = $(window);
 
     var tpl = '<div class="item-wrapper">'+
-        '         <async-data v-if="itemList && itemList.length>0" @scrollfun="getDataList()" ref="async" :key="category">'+
+        '         <async-data v-if="itemList && itemList.length>0 && !isGetData" @scrollfun="getDataList()" ref="async" :key="category">'+
         '            <ul slot="scroll-async">'+
         '                <li v-for="(item, index) in itemList" class="item-li">'+
         '                    <hor-product :index="index" :key="random" type="normal"></hor-product>'+
@@ -29,12 +29,14 @@
                 // 此处为模拟的临界值，实际开发中并不需要
                 maxPage: parseInt(this.category)+3,
                 isSending: false,
-                
+                // 用于区分调取接口后 itemList仍然是空的情况，这时候不应该显示占位符
+                isGetData: true
             }
         },
         watch: {
             '$route': function(to, from) {
                 // 对路由变化作出响应...
+                this.isGetData = true;
                 this.listenRouter(to.params.category, from.params.category);
                 // 此处为模拟的临界值，实际开发中并不需要
                 this.maxPage = parseInt(to.params.category);
@@ -49,9 +51,10 @@
             initPage: function(pageInfo) {
                 // 判断是否有初始化信息
                 if (!!pageInfo) { 
+                    this.isGetData = false;
+
                     this.page = pageInfo.page;
                     this.itemList = pageInfo.itemList;
-
                     if (pageInfo.itemList.length < 1) {
                         setTimeout(function() {
                             that.$refs.async.noMore = true;
@@ -80,6 +83,8 @@
                     page: this.page,
                     t: new Date().getTime()
                 }).done(function(res) {
+                    that.isGetData = false;
+                    
                     if (res.status == 1) {
                         // 如果返回的列表有数据
                         if (res.data.list && res.data.list.length > 0 && that.page <= that.maxPage) {
@@ -101,6 +106,7 @@
                         that.$refs.async.isSending = false;
                     });
                     that.isSending = false;
+                    
                 });
             },
             listenRouter: function(nextCategory, category) {
