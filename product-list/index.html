@@ -24,7 +24,8 @@
 </head>
 
 <body>
-    <div class="empty-holder">
+    <!-- the empty holder  -->
+    <div class="empty-holder J_empty_holder">
         <div class="nav-bar fui-uti-hor-mid"></div>
         <div class="item-wrapper">
             <ul>
@@ -83,9 +84,29 @@
             
         </div>
     </div>
+    <!-- the components rendered by Vue -->
     <div id="J_app">
         <nav-bar></nav-bar>
-        <router-view></router-view>
+        <!-- <transition name="slide-fade">
+            <router-view :key="$route.path"></router-view>
+        </transition> -->
+
+
+        <transition 
+            v-on:before-enter="beforeEnter"
+            v-on:enter="enter"
+            v-on:after-enter="afterEnter"
+            v-on:enter-cancelled="enterCancelled"
+        
+            v-on:before-leave="beforeLeave"
+            v-on:leave="leave"
+            v-on:after-leave="afterLeave"
+            v-on:leave-cancelled="leaveCancelled"
+            :name="animate"
+        >
+            <router-view :key="$route.path"></router-view>
+        </transition>
+        <!-- <router-view></router-view> -->
     </div>
 </body>
 

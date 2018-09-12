@@ -36,10 +36,15 @@
                 // new
                 var that = this;
                 
-                this.oldType = this.type;
+                this.oldType = this.curType;
                 var that = this;
                 clearTimeout(getdata);
                 this.curType = type;
+                if (parseInt(this.curType) > parseInt(this.oldType)) {
+                    this.$root.animate = "slide-fade-left";
+                } else {
+                    this.$root.animate = "slide-fade-right";
+                }
                 clickDom = $(event.currentTarget)[0];
                 this.setSelectedPosition($navbar, clickDom);
                 getdata = setTimeout(function(){

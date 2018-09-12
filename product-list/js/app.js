@@ -42,14 +42,48 @@
         el:'#J_app',
         router: router,
         data: {
-    
+            animate: 'slide-fade-left'
         },
         computed: {},
         mounted:function () {
-            
+            $(".J_empty_holder").hide();
         },
         methods: {
-    
+            /***  =======  动画分割线  ============ */
+            beforeEnter: function (el) {
+            // ...
+            },
+            // 当与 CSS 结合使用时
+            // 回调函数 done 是可选的
+            enter: function (el, done) {
+                // ...
+            },
+            afterEnter: function (el) {
+                // ...
+            },
+            enterCancelled: function (el) {
+                // ...
+            },
+        
+            // --------
+            // 离开时
+            // --------
+        
+            beforeLeave: function (el) {
+                // ...
+            },
+            // 当与 CSS 结合使用时
+            // 回调函数 done 是可选的
+            leave: function (el) {
+                // ...
+            },
+            afterLeave: function (el) {
+                // ...
+            },
+            // leaveCancelled 只用于 v-show 中
+            leaveCancelled: function (el) {
+                // ...
+            }
         }
     });
 

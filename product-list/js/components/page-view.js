@@ -3,20 +3,20 @@
     var $window = $(window);
 
     var tpl = '<div class="item-wrapper">'+
-        '         <async-data v-if="itemList && itemList.length>0 && !isGetData" @scrollfun="getDataList()" ref="async" :key="category">'+
-        '            <ul slot="scroll-async">'+
-        '                <li v-for="(item, index) in itemList" class="item-li">'+
-        '                    <hor-product :index="index" :key="random" type="normal"></hor-product>'+
-        '                </li>'+
-        '            </ul>'+
-        '         </async-data>'+
-        '         <div v-else class="empty-holder">'+
+        '         <div v-if="itemList.length<1 && isGetData" class="empty-holder">'+
         '              <ul>'+
         '                   <li v-for="n in 10" class="item-li">'+
         '                       <hor-product type="empty"></hor-product>'+
         '                   </li>'+
         '              </ul>'+
         '         </div>'+
+        '         <async-data v-else @scrollfun="getDataList()" ref="async" :key="category">'+
+        '            <ul slot="scroll-async">'+
+        '                <li v-for="(item, index) in itemList" class="item-li">'+
+        '                    <hor-product :index="index" :key="random" type="normal"></hor-product>'+
+        '                </li>'+
+        '            </ul>'+
+        '         </async-data>'+
         '        </div>';
 
     Vue.component('product-list', {
@@ -120,10 +120,13 @@
                 // 判断下一个分类是否已被缓存
                 var nextPageInfo = JSON.parse(sessionStorage.getItem('ICECREAM-'+nextCategory));
                 this.initPage(nextPageInfo);
-            }
+            },
+
+            
         },
         mounted: function() {
-            this.initPage();
+            var nextPageInfo = JSON.parse(sessionStorage.getItem('ICECREAM-'+this.category));
+            this.initPage(nextPageInfo);
         }
     });
 })();
