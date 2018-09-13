@@ -19,3 +19,9 @@
 ## fanli-project
 - 这是关于工程改造的一些思考
 - 列出了一些改进方案和仍需思考的问题
+
+## product-list
+- 这是我对常用样式的一次总结
+- demo地址[商品列表](
+http://www.wangyuanliang.com/sharing-notes/product-list/index.html#/4)
+
