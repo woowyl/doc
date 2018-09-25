@@ -11,7 +11,7 @@
 * 向左
 */
   .slide-fade-right-enter-active {
-    transition: all .1s ease;
+    transition: all .3s ease;
   }
   .slide-fade-left-leave-active {
     transition: all .2s cubic-bezier(1.0, 0.5, 0.8, 1.0);
@@ -30,7 +30,7 @@
 * 向右
 */
 .slide-fade-right-enter-active {
-    transition: all .1s ease;
+    transition: all .3s ease;
   }
   .slide-fade-right-leave-active {
     transition: all .2s cubic-bezier(1.0, 0.5, 0.8, 1.0);
