@@ -87,11 +87,8 @@
     <!-- the components rendered by Vue -->
     <div id="J_app">
         <nav-bar></nav-bar>
-        <!-- <transition name="slide-fade">
-            <router-view :key="$route.path"></router-view>
-        </transition> -->
 
-
+        <!-- transition name 用于自动生成 CSS 过渡类名。例如：name: 'fade' 将自动拓展为.fade-enter，.fade-enter-active等。默认类名为 "v" -->
         <transition 
             v-on:before-enter="beforeEnter"
             v-on:enter="enter"
@@ -104,7 +101,9 @@
             v-on:leave-cancelled="leaveCancelled"
             :name="animate"
         >
-            <router-view :key="$route.path"></router-view>
+            <keep-alive>
+                <router-view :key="$route.path"></router-view>
+            </keep-alive>
         </transition>
         <!-- <router-view></router-view> -->
     </div>

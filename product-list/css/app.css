@@ -10,9 +10,11 @@
 /* 动画css 
 * 向左
 */
+  /* 进入时间 */
   .slide-fade-right-enter-active {
     transition: all .3s ease;
   }
+  /* 离开时间 */
   .slide-fade-left-leave-active {
     transition: all .2s cubic-bezier(1.0, 0.5, 0.8, 1.0);
   }
@@ -29,18 +31,20 @@
 /* 动画css 
 * 向右
 */
+/* enter animate */
 .slide-fade-right-enter-active {
     transition: all .3s ease;
-  }
-  .slide-fade-right-leave-active {
-    transition: all .2s cubic-bezier(1.0, 0.5, 0.8, 1.0);
-  }
- .slide-fade-right-leave-to
-  /* .slide-fade-right-leave-active for below version 2.1.8 */ {
-    transform: translateX(300px);
-    opacity: 0;
-  }
-  .slide-fade-right-enter {
-    transform: translateX(-200px);
-    opacity: 0;
-  }
+}
+/* leave animate */
+.slide-fade-right-leave-active {
+  transition: all .2s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+.slide-fade-right-leave-to
+/* .slide-fade-right-leave-active for below version 2.1.8 */ {
+  transform: translateX(300px);
+  opacity: 0;
+}
+.slide-fade-right-enter {
+  transform: translateX(-200px);
+  opacity: 0;
+}

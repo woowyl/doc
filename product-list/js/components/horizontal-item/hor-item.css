@@ -134,7 +134,8 @@
     margin-top: .2rem;
 }
 /* 空占位符样式 */
-.empty-holder .product-images {
+.empty-holder .product-price {
+    margin-top: .45rem;
 }
 .empty-holder .product-name, .empty-holder .product-price, .empty-holder .product-info {
     background: #eee;

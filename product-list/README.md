@@ -10,7 +10,6 @@
     - 手机端，一直下拉刷新dom过多后的卡顿情况
     - 加载体验优化，当接口返回时间较长时，实现类似以下效果  
     <img src="./images/holder.jpg" width="400px">  
-
         - 可分为首屏的样式和切换时的样式
     - 组件抽象和使用方式
     - 切换动画
@@ -24,3 +23,7 @@
 
 - 共享一个window scroll事件，当一个unbind之后，后续的如何处理，`:key="$route.path`生产多个滚动监听，但是名字是一个，所以要为每个scroll单独命名一个名字。
 
+- 动画:
+    - 触发条件是内部组件发生变化(是否显示，是否销毁)时，所以加上`<transition></transition>`就需要给`<router-view>`加上key.
+    - 加上key后，每次组件都会重新渲染，为了保持状态就需要给`<router-view>`外层加一层`<keep-alive>`
+    

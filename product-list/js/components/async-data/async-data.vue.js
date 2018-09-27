@@ -26,7 +26,6 @@
                 var that = this;
                 // 这里加入 this.$vnode.key 用来给每一个页面添加不同的滚动加载
                 $window.on("scroll.LOADMORE" + this.$vnode.key, function() {
-                    
                     if (that.isSending || that.noMore || that.$vnode.key != that.$parent.category) {
                         return;
                     }
@@ -39,6 +38,16 @@
         },
         mounted: function() {
             this.loadMoreItem();
+            console.log('mounted');
+        },
+        activated: function() {
+            console.log('activated');
+            
+        },
+        deactivated: function() {
+            console.log('deactivated');
+            
         }
+        
     })
 })();

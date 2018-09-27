@@ -44,6 +44,11 @@
         data: {
             animate: 'slide-fade-left'
         },
+        watch: {
+            '$route': function(to, from) {
+                console.log('hello');
+            }
+        },
         computed: {},
         mounted:function () {
             $(".J_empty_holder").hide();

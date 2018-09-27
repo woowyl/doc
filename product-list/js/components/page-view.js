@@ -10,13 +10,15 @@
         '                   </li>'+
         '              </ul>'+
         '         </div>'+
-        '         <async-data v-else @scrollfun="getDataList()" ref="async" :key="category">'+
+        '        <keep-alive v-else>'+
+        '         <async-data  @scrollfun="getDataList()" ref="async" :key="category">'+
         '            <ul slot="scroll-async">'+
         '                <li v-for="(item, index) in itemList" class="item-li">'+
         '                    <hor-product :index="index" :key="random" type="normal"></hor-product>'+
         '                </li>'+
         '            </ul>'+
         '         </async-data>'+
+        '        </keep-alive>'+
         '        </div>';
 
     Vue.component('product-list', {
@@ -49,6 +51,8 @@
         },
         methods: {
             initPage: function(pageInfo) {
+                console.log('initpage pageInfo',pageInfo);
+                
                 // 判断是否有初始化信息
                 if (!!pageInfo) { 
                     this.isGetData = false;
@@ -67,9 +71,11 @@
                 } else {
                     // 这句用于关闭异步插件
                     this.page = 1;
-                    window.scroll(0, 0);
                     this.itemList = [];
                     this.getDataList();
+                    setTimeout(function() {
+                        window.scroll(0, 0);
+                    },0);
                 }
             },
             getDataList: function() {
@@ -122,11 +128,11 @@
                 this.initPage(nextPageInfo);
             },
 
-            
         },
         mounted: function() {
             var nextPageInfo = JSON.parse(sessionStorage.getItem('ICECREAM-'+this.category));
             this.initPage(nextPageInfo);
-        }
+        },
+
     });
 })();
