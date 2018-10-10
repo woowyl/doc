@@ -89,7 +89,7 @@
         <nav-bar></nav-bar>
 
         <!-- transition name 用于自动生成 CSS 过渡类名。例如：name: 'fade' 将自动拓展为.fade-enter，.fade-enter-active等。默认类名为 "v" -->
-        <transition 
+        <!-- <transition 
             v-on:before-enter="beforeEnter"
             v-on:enter="enter"
             v-on:after-enter="afterEnter"
@@ -104,8 +104,8 @@
             <keep-alive>
                 <router-view :key="$route.path"></router-view>
             </keep-alive>
-        </transition>
-        <!-- <router-view></router-view> -->
+        </transition> -->
+        <router-view></router-view>
     </div>
 </body>
 
@@ -118,6 +118,7 @@
 
 <script src="./js/components/nav/nav.vue.js"></script>
 
+<script src="./js/components/cache-data/cache-data.vue.js"></script>
 <script src="./js/components/async-data/async-data.vue.js"></script>
 
 <script src="./js/components/page-view.js"></script>

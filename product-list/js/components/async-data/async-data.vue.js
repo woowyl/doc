@@ -26,7 +26,7 @@
                 var that = this;
                 // 这里加入 this.$vnode.key 用来给每一个页面添加不同的滚动加载
                 $window.on("scroll.LOADMORE" + this.$vnode.key, function() {
-                    if (that.isSending || that.noMore || that.$vnode.key != that.$parent.category) {
+                    if (that.isSending || that.noMore || that.$vnode.key != that.$parent.$parent.category) {
                         return;
                     }
                     if ($window.scrollTop() + $window.height() >= $document.height() - 2*$window.height()) {
@@ -38,15 +38,10 @@
         },
         mounted: function() {
             this.loadMoreItem();
-            console.log('mounted');
         },
         activated: function() {
-            console.log('activated');
-            
         },
         deactivated: function() {
-            console.log('deactivated');
-            
         }
         
     })

@@ -11,13 +11,15 @@
         '              </ul>'+
         '         </div>'+
         '        <keep-alive v-else>'+
-        '         <async-data  @scrollfun="getDataList()" ref="async" :key="category">'+
-        '            <ul slot="scroll-async">'+
-        '                <li v-for="(item, index) in itemList" class="item-li">'+
-        '                    <hor-product :index="index" :key="random" type="normal"></hor-product>'+
-        '                </li>'+
-        '            </ul>'+
-        '         </async-data>'+
+        '           <cache-data ref="cache" v-on:untarget-fun="setData" v-on:target-fun="useCaheData" >'+
+        '               <async-data slot="cache-body"  @scrollfun="getDataList()" ref="async" :key="category">'+
+        '                   <ul slot="scroll-async">'+
+        '                       <li v-for="(item, index) in itemList" class="item-li">'+
+        '                           <hor-product :index="index" :key="random" type="normal"></hor-product>'+
+        '                       </li>'+
+        '                   </ul>'+
+        '               </async-data>'+
+        '           </cache-data>'+
         '        </keep-alive>'+
         '        </div>';
 
@@ -39,7 +41,11 @@
             '$route': function(to, from) {
                 // 对路由变化作出响应...
                 this.isGetData = true;
-                this.listenRouter(to.params.category, from.params.category);
+                var thisPageInfo = {
+                    page: this.page,
+                    itemList: this.itemList
+                };
+                this.$refs.cache.recordPage(from.params.category, to.params.category, thisPageInfo);
                 // 此处为模拟的临界值，实际开发中并不需要
                 this.maxPage = parseInt(to.params.category);
             }
@@ -51,20 +57,8 @@
         },
         methods: {
             initPage: function(pageInfo) {
-                console.log('initpage pageInfo',pageInfo);
-                
                 // 判断是否有初始化信息
                 if (!!pageInfo) { 
-                    this.isGetData = false;
-
-                    this.page = pageInfo.page;
-                    this.itemList = pageInfo.itemList;
-                    if (pageInfo.itemList.length < 1) {
-                        setTimeout(function() {
-                            that.$refs.async.noMore = true;
-                        },1000);
-                    }
-
                     setTimeout(function() {
                         window.scroll(0, pageInfo.offsetY);
                     },0);
@@ -76,6 +70,25 @@
                     setTimeout(function() {
                         window.scroll(0, 0);
                     },0);
+                }
+            },
+            setData: function(){
+                console.log('in setData');
+                this.page = 1;
+                this.itemList = [];
+                this.getDataList();
+            },
+            useCaheData: function(pageInfo) {
+                console.log('in useCacheData');
+                this.isGetData = false;
+                this.page = pageInfo.page;
+                this.itemList = pageInfo.itemList;
+                console.log('parenetn fun');
+                
+                if (pageInfo.itemList.length < 1) {
+                    setTimeout(function() {
+                        that.$refs.async.noMore = true;
+                    },1000);
                 }
             },
             getDataList: function() {
@@ -102,7 +115,6 @@
                             that.$nextTick(function() {
                                 that.$refs.async.noMore = true;
                             });
-                            
                         }
                     } else {
                         Fanli.Utility.Toast.open(res.info);
@@ -115,23 +127,9 @@
                     
                 });
             },
-            listenRouter: function(nextCategory, category) {
-                // 记录并保存当前信息
-                var thisPageInfo = {
-                    page: this.page,
-                    offsetY: $(window).scrollTop(),
-                    itemList: this.itemList
-                };
-                sessionStorage.setItem('ICECREAM-' + category, JSON.stringify(thisPageInfo));
-                // 判断下一个分类是否已被缓存
-                var nextPageInfo = JSON.parse(sessionStorage.getItem('ICECREAM-'+nextCategory));
-                this.initPage(nextPageInfo);
-            },
-
         },
         mounted: function() {
-            var nextPageInfo = JSON.parse(sessionStorage.getItem('ICECREAM-'+this.category));
-            this.initPage(nextPageInfo);
+            this.setData();
         },
 
     });
