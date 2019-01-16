@@ -13,7 +13,7 @@
             '</div>';
 
     Vue.component('async-data',{
-        props: [],
+        props: ['curKey'],
         template: tpl,
         data: function() {
             return {
@@ -26,7 +26,9 @@
                 var that = this;
                 // 这里加入 this.$vnode.key 用来给每一个页面添加不同的滚动加载
                 $window.on("scroll.LOADMORE" + this.$vnode.key, function() {
-                    if (that.isSending || that.noMore || that.$vnode.key != that.$parent.$parent.category) {
+                    console.log(that.$vnode.key, that.curKey(), that.$parent.$parent.category);
+                    
+                    if (that.isSending || that.noMore || that.$vnode.key != that.curKey) {
                         return;
                     }
                     if ($window.scrollTop() + $window.height() >= $document.height() - 2*$window.height()) {

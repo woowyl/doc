@@ -16,6 +16,8 @@
                 // 判断是否有初始化信息
                 if (!!pageInfo) { 
                     setTimeout(function() {
+                        console.log('scroll in this moment');
+                        
                         window.scroll(0, pageInfo.offsetY);
                     },0);
                     this.$emit('target-fun', pageInfo);

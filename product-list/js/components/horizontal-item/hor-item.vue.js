@@ -64,8 +64,6 @@
             }
         },
         mounted: function() {
-            console.info('porduct compontes===='+this.$route.params.category);
-            
             $(this.$el).find(".J_lazyimg").lazyload({ threshold : 400 });
         }
     });

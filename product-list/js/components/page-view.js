@@ -12,7 +12,7 @@
         '         </div>'+
         '        <keep-alive v-else>'+
         '           <cache-data ref="cache" v-on:untarget-fun="setData" v-on:target-fun="useCaheData" >'+
-        '               <async-data slot="cache-body"  @scrollfun="getDataList()" ref="async" :key="category">'+
+        '               <async-data slot="cache-body"  @scrollfun="getDataList()" ref="async" :key="category" :category="category">'+
         '                   <ul slot="scroll-async">'+
         '                       <li v-for="(item, index) in itemList" class="item-li">'+
         '                           <hor-product :index="index" :key="random" type="normal"></hor-product>'+
@@ -56,22 +56,6 @@
             }
         },
         methods: {
-            initPage: function(pageInfo) {
-                // 判断是否有初始化信息
-                if (!!pageInfo) { 
-                    setTimeout(function() {
-                        window.scroll(0, pageInfo.offsetY);
-                    },0);
-                } else {
-                    // 这句用于关闭异步插件
-                    this.page = 1;
-                    this.itemList = [];
-                    this.getDataList();
-                    setTimeout(function() {
-                        window.scroll(0, 0);
-                    },0);
-                }
-            },
             setData: function(){
                 console.log('in setData');
                 this.page = 1;

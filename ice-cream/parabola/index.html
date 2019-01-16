@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .wrapper{
+            margin: 0 auto;
+            height: 700px;
+            width: 800px;
+            position: relative;
+            background: skyblue;
+            overflow: hidden;
+        }
+        .ball {
+            position: absolute;
+            right: -40px;
+            top: 50px;
+            transition: all 1s cubic-bezier(0.3, -0.08, 0.735, 0.045);
+        }
+
+        .inner{
+            width: 40px;
+            height: 40px;
+            display: block;
+            background-color: chocolate;
+            border-radius: 100%;
+            transition: transform 1s linear;
+        }
+        button {
+            display: -webkit-box;
+            -webkit-box-align: center;
+            -webkit-box-pack: center;
+            height: 50px;
+            border: 0;
+            display: block;
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="ball">
+            <div class="inner"></div>
+        </div>
+        <button id="pick_btn">give me a ball ball</button>
+    </div>
+</body>
+<script>
+    let btn = document.querySelector("#pick_btn");
+    let ball = document.querySelector(".ball");
+    let inner = document.querySelector(".inner");
+    btn.addEventListener('click', function() {
+        inner.style.display="block";
+        setTimeout(() => {
+            inner.style.webkitTransform = "translateX(-900px)";
+            ball.style.webkitTransform = "translateY(600px)";
+        }, 1);
+    });
+    ball.addEventListener('transitionend', function() {
+        inner.style.display="none";
+        ball.style.webkitTransform = "translateY(0)";
+        inner.style.webkitTransform = "translateX(0)";
+    });
+</script>
+</html>

@@ -1,9 +1,7 @@
 
-[TOC]
-
 # sharing-notes
-
  建议使用 [Marp](https://yhatt.github.io/marp/) 打开
+
 ## ng-directive
 - 这篇文章是我对angularjs directive的理解
 
@@ -25,3 +23,11 @@
 - demo地址[商品列表](
 http://www.wangyuanliang.com/sharing-notes/product-list/index.html#/4)
 
+## product-list
+- 这是我对常用样式的一次总结
+- demo地址[商品列表](
+http://www.wangyuanliang.com/sharing-notes/product-list/index.html#/4)
+
+## 2019-D2
+- 参加第13届D2大会的总结
+- 具体技术应用的情况不多，多是发展的角度看未来前端的方向
