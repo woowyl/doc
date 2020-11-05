@@ -25,3 +25,6 @@
 - demo地址[商品列表](
 http://www.wangyuanliang.com/sharing-notes/product-list/index.html#/4)
 
+
+## create-static-file
+- 通过命令行生成项目静态文件和实现对其的引用
